@@ -7,8 +7,18 @@
     <link rel="manifest" href="manifest.json">
     <link rel="icon" href="/icon.png" type="image/png">
     <title>Distribucion de Fecuencias</title>
-    
-    <script type="module" src="/service-worker.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+          window.addEventListener("load", function () {
+              navigator.serviceWorker
+                  .register("/serviceWorker.js")
+                  .then((registration) => {
+                      console.log("SW registration successful");
+                  });
+          });
+      }
+  </script>
+  <script async src="https://unpkg.com/pwacompat" crossOrigin="anonymous"></script>
   </head>
   <body>
     <div id="app">
