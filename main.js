@@ -30,7 +30,6 @@ document.getElementById('btn').addEventListener('click', () => {
     let FRA = 0
     for (let index = 0; index < clases.slice(0,2); index++) {
         let number = 1
-        console.log(index,clases);
         for (const value of array) {
             if (value >= min && value < max) {
                 count += 1

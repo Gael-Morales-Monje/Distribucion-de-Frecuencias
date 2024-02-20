@@ -1,3 +1,13 @@
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      console.log('Service Worker registrado con éxito:', registration.scope);
+    }, function(err) {
+      console.error('Error al registrar el Service Worker:', err);
+    });
+  });
+}
+
 const CACHE_NAME = 'mi-cache';
 const urlsToCache = [
     '/',
